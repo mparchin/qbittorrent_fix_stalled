@@ -6,11 +6,8 @@ on:
       - "*"
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Docker Login
@@ -18,8 +15,6 @@ jobs:
       with:
         username: mparchin
         password: ${{ secrets.DOCKER_PASS }}
-    - name: cd
-      run: cd qbittorrentFixStalled
     - name: Build and push Docker images
       uses: docker/build-push-action@v6.9.0
       with:
